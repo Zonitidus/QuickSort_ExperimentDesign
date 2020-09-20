@@ -265,12 +265,13 @@ namespace QuickSortsTests
             Assert.AreEqual(resul1, resul2);
         }
 
-        /*
+        
         private QuickSort<Int32> Scene_Int32_100000_Best()
         {
             QuickSort<Int32> quick = new QuickSort<Int32>();
             return quick;
         }
+        /*
         [TestMethod]
         public void Test_Int32_100000_Best()
         {
@@ -290,14 +291,15 @@ namespace QuickSortsTests
             QuickSort<Int32> quick = new QuickSort<Int32>();
             return quick;
         }
+        
         [TestMethod]
         public void Test_Int32_10_Normal()
         {
 
             int size = 10;
-            Int32[] tsOrder = GenerateRandomArray(size).ToArray();
+            Int32[] tsOrder = GenerateRandomArray(size-1).ToArray();
             Array.Sort(tsOrder);
-            Int32[] ts = GenerateRandomArray(size).ToArray();
+            Int32[] ts = GenerateRandomArray(size-1).ToArray();
             Scene_Int32_10_Normal().QuickSortAlgorithm(ts, 0, 9);
             string resul1 = string.Join(".", tsOrder);
             string resul2 = string.Join(".", ts);
@@ -315,9 +317,9 @@ namespace QuickSortsTests
         public void Test_Int32_100_Normal()
         {
             int size = 100;
-            Int32[] tsOrder = GenerateRandomArray(size).ToArray();
+            Int32[] tsOrder = GenerateRandomArray(size-1).ToArray();
             Array.Sort(tsOrder);
-            Int32[] ts = GenerateRandomArray(size).ToArray();
+            Int32[] ts = GenerateRandomArray(size-1).ToArray();
             Scene_Int32_100_Normal().QuickSortAlgorithm(ts, 0, 99);
             string resul1 = string.Join(".", tsOrder);
             string resul2 = string.Join(".", ts);
@@ -333,9 +335,9 @@ namespace QuickSortsTests
         public void Test_Int32_1000_Normal()
         {
             int size = 1000;
-            Int32[] tsOrder = GenerateRandomArray(size).ToArray();
+            Int32[] tsOrder = GenerateRandomArray(size-1).ToArray();
             Array.Sort(tsOrder);
-            Int32[] ts = GenerateRandomArray(size).ToArray();
+            Int32[] ts = GenerateRandomArray(size-1).ToArray();
             Scene_Int32_1000_Normal().QuickSortAlgorithm(ts, 0, 999);
             string resul1 = string.Join(".", tsOrder);
             string resul2 = string.Join(".", ts);
@@ -351,9 +353,9 @@ namespace QuickSortsTests
         public void Test_Int32_10000_Normal()
         {
             int size = 10000;
-            Int32[] tsOrder = GenerateRandomArray(size).ToArray();
+            Int32[] tsOrder = GenerateRandomArray(size-1).ToArray();
             Array.Sort(tsOrder);
-            Int32[] ts = GenerateRandomArray(size).ToArray();
+            Int32[] ts = GenerateRandomArray(size-1).ToArray();
             Scene_Int32_10000_Normal().QuickSortAlgorithm(ts, 0, 9999);
             string resul1 = string.Join(".", tsOrder);
             string resul2 = string.Join(".", ts);
@@ -378,12 +380,29 @@ namespace QuickSortsTests
             Console.WriteLine(ts);
             Assert.AreEqual(resul1, resul2);
         }
-       */ 
+       */
+
+        private QuickSort<Int32> Scene_Int32_0_Empty()
+        {
+            QuickSort<Int32> quick = new QuickSort<Int32>();
+            return quick;
+        }
+        [TestMethod]
+        public void Test_Int32_0_Empty()
+        {
+            Int32[] tsOrder = {};
+            Int32[] ts = {};
+            Scene_Int32_0_Empty().QuickSortAlgorithm(ts, 0, 0);
+            string resul1 = string.Join(".", tsOrder);
+            string resul2 = string.Join(".", ts);
+            Console.WriteLine(ts);
+            Assert.AreEqual(resul1, resul2);
+        }
         private List<Int32> GenerateRandomArray(int x) 
         {
             Random numeroAleatorio = new Random();
             List<Int32> listRandom = new List<Int32>();
-            while (listRandom.Count<x) 
+            while (listRandom.Count<=x) 
             {
                 listRandom.Add(numeroAleatorio.Next(x));
             }
