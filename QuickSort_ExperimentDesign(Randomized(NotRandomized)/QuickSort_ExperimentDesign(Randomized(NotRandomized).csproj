@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Experiment\Experiment.cs" />
     <Compile Include="Gui\QuickSortExperiment.cs">
       <SubType>Form</SubType>
     </Compile>
