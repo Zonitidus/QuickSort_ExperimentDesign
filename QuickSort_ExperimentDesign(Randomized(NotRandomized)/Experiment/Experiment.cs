@@ -10,6 +10,8 @@ namespace QuickSort_ExperimentDesign_Randomized_NotRandomized_.Experiment
     class Experiment
     {
         private QuickSort<Int32> sorter;
+        private Randomized_QS<Int32> sorterR;
+
         private Int32[] tenDataItems;
         private Int32[] oneHundredDataItems;
         private Int32[] oneThousandDataItems;
