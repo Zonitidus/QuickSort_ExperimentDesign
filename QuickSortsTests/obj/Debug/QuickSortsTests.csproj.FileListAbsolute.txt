@@ -1,0 +1,17 @@
+C:\Users\juano\Desktop\PruebaMerge\QuickSortsTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\juano\Desktop\PruebaMerge\QuickSortsTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\juano\Desktop\PruebaMerge\QuickSortsTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\juano\Desktop\PruebaMerge\QuickSortsTests\bin\Debug\QuickSortsTests.dll
+C:\Users\juano\Desktop\PruebaMerge\QuickSortsTests\bin\Debug\QuickSortsTests.pdb
+C:\Users\juano\Desktop\PruebaMerge\QuickSortsTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\juano\Desktop\PruebaMerge\QuickSortsTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\juano\Desktop\PruebaMerge\QuickSortsTests\bin\Debug\QuickSort_ExperimentDesign(Randomized(NotRandomized).exe
+C:\Users\juano\Desktop\PruebaMerge\QuickSortsTests\bin\Debug\QuickSort_ExperimentDesign(Randomized(NotRandomized).pdb
+C:\Users\juano\Desktop\PruebaMerge\QuickSortsTests\bin\Debug\QuickSort_ExperimentDesign(Randomized(NotRandomized).exe.config
+C:\Users\juano\Desktop\PruebaMerge\QuickSortsTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\juano\Desktop\PruebaMerge\QuickSortsTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\juano\Desktop\PruebaMerge\QuickSortsTests\obj\Debug\QuickSortsTests.csprojAssemblyReference.cache
+C:\Users\juano\Desktop\PruebaMerge\QuickSortsTests\obj\Debug\QuickSortsTests.csproj.CoreCompileInputs.cache
+C:\Users\juano\Desktop\PruebaMerge\QuickSortsTests\obj\Debug\QuickSortsTests.csproj.CopyComplete
+C:\Users\juano\Desktop\PruebaMerge\QuickSortsTests\obj\Debug\QuickSortsTests.dll
+C:\Users\juano\Desktop\PruebaMerge\QuickSortsTests\obj\Debug\QuickSortsTests.pdb
