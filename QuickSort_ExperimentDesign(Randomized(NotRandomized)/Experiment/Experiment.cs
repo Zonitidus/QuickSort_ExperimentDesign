@@ -5,9 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace QuickSort_ExperimentDesign_Randomized_NotRandomized_.Experiment
 {
-    class Experiment
+    public class Experiment
     {
 
         private const String TYPE_NONDESCENDENT = "ND";
@@ -17,13 +18,13 @@ namespace QuickSort_ExperimentDesign_Randomized_NotRandomized_.Experiment
         private QuickSort<Int32> sorter;
         private Randomized_QS<Int32> sorterR;
 
-        private Dictionary<String, List<double>> averageTimeQS;
-        private Dictionary<String, List<double>> averageTimeRandomQS;
+        private Dictionary<String, List<double>> timesQS;
+        private Dictionary<String, List<double>> timesRandomQS;
 
 
         public Experiment() {
-            this.averageTimeQS = new Dictionary<string, List<double>>();
-            this.averageTimeRandomQS = new Dictionary<string, List<double>>();
+            this.timesQS = new Dictionary<string, List<double>>();
+            this.timesRandomQS = new Dictionary<string, List<double>>();
         }
 
         public void startExperiment() { 
@@ -42,6 +43,21 @@ namespace QuickSort_ExperimentDesign_Randomized_NotRandomized_.Experiment
             }
         }
 
+        public void convertToCSV()
+        {
+            String csvTimesQS = String.Join(
+                Environment.NewLine,
+                timesQS.Select(d => $"{d.Key},{string.Join(",", d.Value)}")
+            );
+            System.IO.File.WriteAllText("../../TimesCSV/timesQS.csv", csvTimesQS);
+
+            String csvTimesRandomQS = String.Join(
+                Environment.NewLine,
+                timesRandomQS.Select(d => $"{d.Key},{string.Join(",", d.Value)}")
+            );
+            System.IO.File.WriteAllText("../../TimesCSV/timesRandomQS.csv", csvTimesRandomQS);
+        }
+
         private void initExperimentNonRandomizedQS(String type, Int32[] array10, Int32[] array100, Int32[] array1000, Int32[] array10000, Int32[] array100000)
         {
             //10
@@ -50,14 +66,14 @@ namespace QuickSort_ExperimentDesign_Randomized_NotRandomized_.Experiment
             sorter.QuickSortAlgorithm(array10, 0, array10.Length-1);
             watch10.Stop();
             double time10ND = (double)watch10.ElapsedMilliseconds;
-            if (!averageTimeQS.ContainsKey(Key10))
+            if (!timesQS.ContainsKey(Key10))
             {
                 List<double> tempList = new List<double>();
                 tempList.Add(time10ND);
-                averageTimeQS.Add(Key10, tempList);
+                timesQS.Add(Key10, tempList);
             }
             else {
-                averageTimeQS[Key10].Add(time10ND);
+                timesQS[Key10].Add(time10ND);
             }
 
 
@@ -67,15 +83,15 @@ namespace QuickSort_ExperimentDesign_Randomized_NotRandomized_.Experiment
             sorter.QuickSortAlgorithm(array100, 0, array100.Length - 1);
             watch100.Stop();
             double time100ND = (double)watch100.ElapsedMilliseconds;
-            if (!averageTimeQS.ContainsKey(Key100))
+            if (!timesQS.ContainsKey(Key100))
             {
                 List<double> tempList = new List<double>();
                 tempList.Add(time100ND);
-                averageTimeQS.Add(Key100, tempList);
+                timesQS.Add(Key100, tempList);
             }
             else
             {
-                averageTimeQS[Key100].Add(time100ND);
+                timesQS[Key100].Add(time100ND);
             }
 
 
@@ -87,15 +103,15 @@ namespace QuickSort_ExperimentDesign_Randomized_NotRandomized_.Experiment
             sorter.QuickSortAlgorithm(array1000, 0, array1000.Length - 1);
             watch1000.Stop();
             double time1000ND = (double)watch1000.ElapsedMilliseconds;
-            if (!averageTimeQS.ContainsKey(Key1000))
+            if (!timesQS.ContainsKey(Key1000))
             {
                 List<double> tempList = new List<double>();
                 tempList.Add(time1000ND);
-                averageTimeQS.Add(Key1000, tempList);
+                timesQS.Add(Key1000, tempList);
             }
             else
             {
-                averageTimeQS[Key1000].Add(time1000ND);
+                timesQS[Key1000].Add(time1000ND);
             }
 
 
@@ -105,15 +121,15 @@ namespace QuickSort_ExperimentDesign_Randomized_NotRandomized_.Experiment
             sorter.QuickSortAlgorithm(array10000, 0, array10000.Length - 1);
             watch10000.Stop();
             double time10000ND = (double)watch10000.ElapsedMilliseconds;
-            if (!averageTimeQS.ContainsKey(Key10000))
+            if (!timesQS.ContainsKey(Key10000))
             {
                 List<double> tempList = new List<double>();
                 tempList.Add(time10000ND);
-                averageTimeQS.Add(Key10000, tempList);
+                timesQS.Add(Key10000, tempList);
             }
             else
             {
-                averageTimeQS[Key10000].Add(time10000ND);
+                timesQS[Key10000].Add(time10000ND);
             }
 
 
@@ -125,15 +141,15 @@ namespace QuickSort_ExperimentDesign_Randomized_NotRandomized_.Experiment
             sorter.QuickSortAlgorithm(array100000, 0, array100000.Length - 1);
             watch100000.Stop();
             double time100000ND = (double)watch100000.ElapsedMilliseconds;
-            if (!averageTimeQS.ContainsKey(Key100000))
+            if (!timesQS.ContainsKey(Key100000))
             {
                 List<double> tempList = new List<double>();
                 tempList.Add(time100000ND);
-                averageTimeQS.Add(Key100000, tempList);
+                timesQS.Add(Key100000, tempList);
             }
             else
             {
-                averageTimeQS[Key100000].Add(time100000ND);
+                timesQS[Key100000].Add(time100000ND);
             }
 
         }
@@ -146,15 +162,15 @@ namespace QuickSort_ExperimentDesign_Randomized_NotRandomized_.Experiment
             sorterR.RandomizedQSAlgorithm(array10, 0, array10.Length-1);
             watch10.Stop();
             double time10ND = (double)watch10.ElapsedMilliseconds;
-            if (!averageTimeRandomQS.ContainsKey(Key10))
+            if (!timesRandomQS.ContainsKey(Key10))
             {
                 List<double> tempList = new List<double>();
                 tempList.Add(time10ND);
-                averageTimeRandomQS.Add(Key10, tempList);
+                timesRandomQS.Add(Key10, tempList);
             }
             else
             {
-                averageTimeRandomQS[Key10].Add(time10ND);
+                timesRandomQS[Key10].Add(time10ND);
             }
 
 
@@ -164,15 +180,15 @@ namespace QuickSort_ExperimentDesign_Randomized_NotRandomized_.Experiment
             sorterR.RandomizedQSAlgorithm(array100, 0, array100.Length - 1);
             watch100.Stop();
             double time100ND = (double)watch100.ElapsedMilliseconds;
-            if (!averageTimeRandomQS.ContainsKey(Key100))
+            if (!timesRandomQS.ContainsKey(Key100))
             {
                 List<double> tempList = new List<double>();
                 tempList.Add(time100ND);
-                averageTimeRandomQS.Add(Key100, tempList);
+                timesRandomQS.Add(Key100, tempList);
             }
             else
             {
-                averageTimeRandomQS[Key100].Add(time100ND);
+                timesRandomQS[Key100].Add(time100ND);
             }
 
 
@@ -184,15 +200,15 @@ namespace QuickSort_ExperimentDesign_Randomized_NotRandomized_.Experiment
             sorterR.RandomizedQSAlgorithm(array1000, 0, array1000.Length - 1);
             watch1000.Stop();
             double time1000ND = (double)watch1000.ElapsedMilliseconds;
-            if (!averageTimeRandomQS.ContainsKey(Key1000))
+            if (!timesRandomQS.ContainsKey(Key1000))
             {
                 List<double> tempList = new List<double>();
                 tempList.Add(time1000ND);
-                averageTimeRandomQS.Add(Key1000, tempList);
+                timesRandomQS.Add(Key1000, tempList);
             }
             else
             {
-                averageTimeRandomQS[Key1000].Add(time1000ND);
+                timesRandomQS[Key1000].Add(time1000ND);
             }
 
 
@@ -202,15 +218,15 @@ namespace QuickSort_ExperimentDesign_Randomized_NotRandomized_.Experiment
             sorterR.RandomizedQSAlgorithm(array10000, 0, array10000.Length - 1);
             watch10000.Stop();
             double time10000ND = (double)watch10000.ElapsedMilliseconds;
-            if (!averageTimeRandomQS.ContainsKey(Key10000))
+            if (!timesRandomQS.ContainsKey(Key10000))
             {
                 List<double> tempList = new List<double>();
                 tempList.Add(time10000ND);
-                averageTimeRandomQS.Add(Key10000, tempList);
+                timesRandomQS.Add(Key10000, tempList);
             }
             else
             {
-                averageTimeRandomQS[Key10000].Add(time10000ND);
+                timesRandomQS[Key10000].Add(time10000ND);
             }
 
 
@@ -222,15 +238,15 @@ namespace QuickSort_ExperimentDesign_Randomized_NotRandomized_.Experiment
             sorterR.RandomizedQSAlgorithm(array100000, 0, array100000.Length - 1);
             watch100000.Stop();
             double time100000ND = (double)watch100000.ElapsedMilliseconds;
-            if (!averageTimeRandomQS.ContainsKey(Key100000))
+            if (!timesRandomQS.ContainsKey(Key100000))
             {
                 List<double> tempList = new List<double>();
                 tempList.Add(time100000ND);
-                averageTimeRandomQS.Add(Key100000, tempList);
+                timesRandomQS.Add(Key100000, tempList);
             }
             else
             {
-                averageTimeRandomQS[Key100000].Add(time100000ND);
+                timesRandomQS[Key100000].Add(time100000ND);
             }
 
         }

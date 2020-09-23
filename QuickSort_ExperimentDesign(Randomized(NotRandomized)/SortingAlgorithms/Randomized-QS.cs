@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QuickSort_ExperimentDesign_Randomized_NotRandomized_.SortingAlgorithms
 {
-    class Randomized_QS<T> where T : IComparable<T>
+    public class Randomized_QS<T> where T : IComparable<T>
     {
         public void RandomizedQSAlgorithm(T[] a, int p, int r)
         {

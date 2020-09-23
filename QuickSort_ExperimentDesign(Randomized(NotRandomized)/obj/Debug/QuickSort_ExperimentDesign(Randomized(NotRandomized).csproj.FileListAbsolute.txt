@@ -8,3 +8,13 @@ C:\Users\zonif\source\repos\QuickSort_ExperimentDesign(Randomized(NotRandomized)
 C:\Users\zonif\source\repos\QuickSort_ExperimentDesign(Randomized(NotRandomized)\QuickSort_ExperimentDesign(Randomized(NotRandomized)\obj\Debug\QuickSort_ExperimentDesign(Randomized(NotRandomized).csproj.CoreCompileInputs.cache
 C:\Users\zonif\source\repos\QuickSort_ExperimentDesign(Randomized(NotRandomized)\QuickSort_ExperimentDesign(Randomized(NotRandomized)\obj\Debug\QuickSort_ExperimentDesign(Randomized(NotRandomized).exe
 C:\Users\zonif\source\repos\QuickSort_ExperimentDesign(Randomized(NotRandomized)\QuickSort_ExperimentDesign(Randomized(NotRandomized)\obj\Debug\QuickSort_ExperimentDesign(Randomized(NotRandomized).pdb
+C:\Users\samue\Documents\VSprojects\QuickSort\QuickSort_ExperimentDesign(Randomized(NotRandomized)\bin\Debug\QuickSort_ExperimentDesign(Randomized(NotRandomized).exe.config
+C:\Users\samue\Documents\VSprojects\QuickSort\QuickSort_ExperimentDesign(Randomized(NotRandomized)\bin\Debug\QuickSort_ExperimentDesign(Randomized(NotRandomized).exe
+C:\Users\samue\Documents\VSprojects\QuickSort\QuickSort_ExperimentDesign(Randomized(NotRandomized)\bin\Debug\QuickSort_ExperimentDesign(Randomized(NotRandomized).pdb
+C:\Users\samue\Documents\VSprojects\QuickSort\QuickSort_ExperimentDesign(Randomized(NotRandomized)\obj\Debug\QuickSort_ExperimentDesign(Randomized(NotRandomized).csprojAssemblyReference.cache
+C:\Users\samue\Documents\VSprojects\QuickSort\QuickSort_ExperimentDesign(Randomized(NotRandomized)\obj\Debug\QuickSort_ExperimentDesign_Randomized_NotRandomized_.Properties.Resources.resources
+C:\Users\samue\Documents\VSprojects\QuickSort\QuickSort_ExperimentDesign(Randomized(NotRandomized)\obj\Debug\QuickSort_ExperimentDesign_Randomized_NotRandomized_.QuickSortExperiment.resources
+C:\Users\samue\Documents\VSprojects\QuickSort\QuickSort_ExperimentDesign(Randomized(NotRandomized)\obj\Debug\QuickSort_ExperimentDesign(Randomized(NotRandomized).csproj.GenerateResource.cache
+C:\Users\samue\Documents\VSprojects\QuickSort\QuickSort_ExperimentDesign(Randomized(NotRandomized)\obj\Debug\QuickSort_ExperimentDesign(Randomized(NotRandomized).csproj.CoreCompileInputs.cache
+C:\Users\samue\Documents\VSprojects\QuickSort\QuickSort_ExperimentDesign(Randomized(NotRandomized)\obj\Debug\QuickSort_ExperimentDesign(Randomized(NotRandomized).exe
+C:\Users\samue\Documents\VSprojects\QuickSort\QuickSort_ExperimentDesign(Randomized(NotRandomized)\obj\Debug\QuickSort_ExperimentDesign(Randomized(NotRandomized).pdb
