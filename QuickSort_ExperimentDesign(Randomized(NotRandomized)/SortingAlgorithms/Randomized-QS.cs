@@ -18,9 +18,10 @@ namespace QuickSort_ExperimentDesign_Randomized_NotRandomized_.SortingAlgorithms
             if (p < r)
             {
                 int q = RandParti(a,p,r);
-                RandomizedQSAlgorithm(a, p, q - 1);
-                RandomizedQSAlgorithm(a, q + 1, r);
-
+                if (q > r) { 
+                    RandomizedQSAlgorithm(a, p, q - 1);
+                    RandomizedQSAlgorithm(a, q + 1, r);
+                }
             }
         }
 

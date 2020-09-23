@@ -33,7 +33,7 @@ namespace QuickSort_ExperimentDesign_Randomized_NotRandomized_.Experiment
 
         public void startExperiment() { 
 
-            for(int i = 0; i < 100; i++)
+            for(int i = 0; i < 1000; i++)
             {
                 initExperimentNonRandomizedQS(TYPE_NONDESCENDENT, orderedNonDescendent(10), orderedNonDescendent(100), orderedNonDescendent(1000), orderedNonDescendent(10000), orderedNonDescendent(100000));
                 initExperimentNonRandomizedQS(TYPE_NONASCENDENT, orderedNonAscendent(10), orderedNonAscendent(100), orderedNonAscendent(1000), orderedNonAscendent(10000), orderedNonAscendent(100000));
@@ -52,13 +52,13 @@ namespace QuickSort_ExperimentDesign_Randomized_NotRandomized_.Experiment
         {
             String csvTimesQS = String.Join(
                 Environment.NewLine,
-                timesQS.Select(d => $"{d.Key},{string.Join(",", d.Value)}")
+                timesQS.Select(d => $"{d.Key};{string.Join(";", d.Value)}")
             );
             System.IO.File.WriteAllText("../../TimesCSV/timesQS.csv", csvTimesQS);
 
             String csvTimesRandomQS = String.Join(
                 Environment.NewLine,
-                timesRandomQS.Select(d => $"{d.Key},{string.Join(",", d.Value)}")
+                timesRandomQS.Select(d => $"{d.Key};{string.Join(";", d.Value)}")
             );
             System.IO.File.WriteAllText("../../TimesCSV/timesRandomQS.csv", csvTimesRandomQS);
         }
@@ -67,10 +67,10 @@ namespace QuickSort_ExperimentDesign_Randomized_NotRandomized_.Experiment
         {
             //10
             String Key10 = "10"+ type;
-            var watch10 = System.Diagnostics.Stopwatch.StartNew();
+            TimeSpan watchI10 = new TimeSpan(DateTime.Now.Ticks);
             sorter.QuickSortAlgorithm(array10, 0, array10.Length-1);
-            watch10.Stop();
-            double time10ND = (double)watch10.ElapsedMilliseconds;
+            TimeSpan watchF10 = new TimeSpan(DateTime.Now.Ticks);
+            double time10ND = watchF10.Subtract(watchI10).TotalMilliseconds;
             if (!timesQS.ContainsKey(Key10))
             {
                 List<double> tempList = new List<double>();
@@ -84,10 +84,10 @@ namespace QuickSort_ExperimentDesign_Randomized_NotRandomized_.Experiment
 
             //100
             String Key100 = "100" + type;
-            var watch100 = System.Diagnostics.Stopwatch.StartNew();
+            TimeSpan watchI100 = new TimeSpan(DateTime.Now.Ticks);
             sorter.QuickSortAlgorithm(array100, 0, array100.Length - 1);
-            watch100.Stop();
-            double time100ND = (double)watch100.ElapsedMilliseconds;
+            TimeSpan watchF100 = new TimeSpan(DateTime.Now.Ticks);
+            double time100ND = watchF100.Subtract(watchI100).TotalMilliseconds;
             if (!timesQS.ContainsKey(Key100))
             {
                 List<double> tempList = new List<double>();
@@ -104,10 +104,10 @@ namespace QuickSort_ExperimentDesign_Randomized_NotRandomized_.Experiment
 
             //1000
             String Key1000 = "1000" + type;
-            var watch1000 = System.Diagnostics.Stopwatch.StartNew();
+            TimeSpan watchI1000 = new TimeSpan(DateTime.Now.Ticks);
             sorter.QuickSortAlgorithm(array1000, 0, array1000.Length - 1);
-            watch1000.Stop();
-            double time1000ND = (double)watch1000.ElapsedMilliseconds;
+            TimeSpan watchF1000 = new TimeSpan(DateTime.Now.Ticks);
+            double time1000ND = watchF1000.Subtract(watchI1000).TotalMilliseconds;
             if (!timesQS.ContainsKey(Key1000))
             {
                 List<double> tempList = new List<double>();
@@ -122,10 +122,10 @@ namespace QuickSort_ExperimentDesign_Randomized_NotRandomized_.Experiment
 
             //10000
             String Key10000 = "10000" + type;
-            var watch10000 = System.Diagnostics.Stopwatch.StartNew();
+            TimeSpan watchI10000 = new TimeSpan(DateTime.Now.Ticks);
             sorter.QuickSortAlgorithm(array10000, 0, array10000.Length - 1);
-            watch10000.Stop();
-            double time10000ND = (double)watch10000.ElapsedMilliseconds;
+            TimeSpan watchF10000 = new TimeSpan(DateTime.Now.Ticks);
+            double time10000ND = watchF10000.Subtract(watchI10000).TotalMilliseconds;
             if (!timesQS.ContainsKey(Key10000))
             {
                 List<double> tempList = new List<double>();
@@ -142,10 +142,10 @@ namespace QuickSort_ExperimentDesign_Randomized_NotRandomized_.Experiment
 
             //100000
             String Key100000 = "100000" + type;
-            var watch100000 = System.Diagnostics.Stopwatch.StartNew();
+            TimeSpan watchI100000 = new TimeSpan(DateTime.Now.Ticks);
             sorter.QuickSortAlgorithm(array100000, 0, array100000.Length - 1);
-            watch100000.Stop();
-            double time100000ND = (double)watch100000.ElapsedMilliseconds;
+            TimeSpan watchF100000 = new TimeSpan(DateTime.Now.Ticks);
+            double time100000ND = watchF100000.Subtract(watchI100000).TotalMilliseconds;
             if (!timesQS.ContainsKey(Key100000))
             {
                 List<double> tempList = new List<double>();
@@ -163,10 +163,10 @@ namespace QuickSort_ExperimentDesign_Randomized_NotRandomized_.Experiment
         {
             //10
             String Key10 = "10" + type;
-            var watch10 = System.Diagnostics.Stopwatch.StartNew();
+            TimeSpan watchI10 = new TimeSpan(DateTime.Now.Ticks);
             sorterR.RandomizedQSAlgorithm(array10, 0, array10.Length-1);
-            watch10.Stop();
-            double time10ND = (double)watch10.ElapsedMilliseconds;
+            TimeSpan watchF10 = new TimeSpan(DateTime.Now.Ticks);
+            double time10ND = watchF10.Subtract(watchI10).TotalMilliseconds;
             if (!timesRandomQS.ContainsKey(Key10))
             {
                 List<double> tempList = new List<double>();
@@ -181,10 +181,10 @@ namespace QuickSort_ExperimentDesign_Randomized_NotRandomized_.Experiment
 
             //100
             String Key100 = "100" + type;
-            var watch100 = System.Diagnostics.Stopwatch.StartNew();
+            TimeSpan watchI100 = new TimeSpan(DateTime.Now.Ticks);
             sorterR.RandomizedQSAlgorithm(array100, 0, array100.Length - 1);
-            watch100.Stop();
-            double time100ND = (double)watch100.ElapsedMilliseconds;
+            TimeSpan watchF100 = new TimeSpan(DateTime.Now.Ticks);
+            double time100ND = watchF100.Subtract(watchI100).TotalMilliseconds;
             if (!timesRandomQS.ContainsKey(Key100))
             {
                 List<double> tempList = new List<double>();
@@ -201,10 +201,10 @@ namespace QuickSort_ExperimentDesign_Randomized_NotRandomized_.Experiment
 
             //1000
             String Key1000 = "1000" + type;
-            var watch1000 = System.Diagnostics.Stopwatch.StartNew();
+            TimeSpan watchI1000 = new TimeSpan(DateTime.Now.Ticks);
             sorterR.RandomizedQSAlgorithm(array1000, 0, array1000.Length - 1);
-            watch1000.Stop();
-            double time1000ND = (double)watch1000.ElapsedMilliseconds;
+            TimeSpan watchF1000 = new TimeSpan(DateTime.Now.Ticks);
+            double time1000ND = watchF1000.Subtract(watchI1000).TotalMilliseconds;
             if (!timesRandomQS.ContainsKey(Key1000))
             {
                 List<double> tempList = new List<double>();
@@ -219,10 +219,10 @@ namespace QuickSort_ExperimentDesign_Randomized_NotRandomized_.Experiment
 
             //10000
             String Key10000 = "10000" + type;
-            var watch10000 = System.Diagnostics.Stopwatch.StartNew();
+            TimeSpan watchI10000 = new TimeSpan(DateTime.Now.Ticks);
             sorterR.RandomizedQSAlgorithm(array10000, 0, array10000.Length - 1);
-            watch10000.Stop();
-            double time10000ND = (double)watch10000.ElapsedMilliseconds;
+            TimeSpan watchF10000 = new TimeSpan(DateTime.Now.Ticks);
+            double time10000ND = watchF10000.Subtract(watchI10000).TotalMilliseconds;
             if (!timesRandomQS.ContainsKey(Key10000))
             {
                 List<double> tempList = new List<double>();
@@ -239,10 +239,10 @@ namespace QuickSort_ExperimentDesign_Randomized_NotRandomized_.Experiment
 
             //100000
             String Key100000 = "100000" + type;
-            var watch100000 = System.Diagnostics.Stopwatch.StartNew();
+            TimeSpan watchI100000 = new TimeSpan(DateTime.Now.Ticks);
             sorterR.RandomizedQSAlgorithm(array100000, 0, array100000.Length - 1);
-            watch100000.Stop();
-            double time100000ND = (double)watch100000.ElapsedMilliseconds;
+            TimeSpan watchF100000 = new TimeSpan(DateTime.Now.Ticks);
+            double time100000ND = watchF100000.Subtract(watchI100000).TotalMilliseconds;
             if (!timesRandomQS.ContainsKey(Key100000))
             {
                 List<double> tempList = new List<double>();
@@ -264,7 +264,9 @@ namespace QuickSort_ExperimentDesign_Randomized_NotRandomized_.Experiment
 
             for(int i = 0; i < size; i++)
             {
-                array[i] = random.Next(1, 10000000);
+                Int32 tempRan = random.Next(1, 10000000);
+
+                array[i] = tempRan;
             }
             return array;
         }

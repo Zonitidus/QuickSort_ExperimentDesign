@@ -17,6 +17,7 @@ namespace QuickSort_ExperimentDesign_Randomized_NotRandomized_
         {
             exp.startExperiment();
             MessageBox.Show("El experimento terminó exitosamente!", "Terminado");
+            this.Close();
         }
     }
 }
