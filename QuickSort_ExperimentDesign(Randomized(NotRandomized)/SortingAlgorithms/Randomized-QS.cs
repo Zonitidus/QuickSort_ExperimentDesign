@@ -8,6 +8,11 @@ namespace QuickSort_ExperimentDesign_Randomized_NotRandomized_.SortingAlgorithms
 {
     public class Randomized_QS<T> where T : IComparable<T>
     {
+        public Randomized_QS()
+        {
+
+        }
+
         public void RandomizedQSAlgorithm(T[] a, int p, int r)
         {
             if (p < r)

@@ -10,9 +10,6 @@ namespace QuickSort_ExperimentDesign_Randomized_NotRandomized_.SortingAlgorithms
     {
 
         public QuickSort(){
-            
-
-
         }
 
         public void QuickSortAlgorithm(T[] array, int p, int r) {
@@ -20,8 +17,12 @@ namespace QuickSort_ExperimentDesign_Randomized_NotRandomized_.SortingAlgorithms
             if (p < r) {
 
                 int q = this.Partition(array, p, r);
-                QuickSortAlgorithm(array,p, q-1);
-                QuickSortAlgorithm(array, q+1, r);
+
+                if (q > r)
+                {
+                    QuickSortAlgorithm(array, p, q - 1);
+                    QuickSortAlgorithm(array, q + 1, r);
+                }
             }
         
         }

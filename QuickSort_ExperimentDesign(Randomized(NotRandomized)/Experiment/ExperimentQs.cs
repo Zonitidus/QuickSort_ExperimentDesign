@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace QuickSort_ExperimentDesign_Randomized_NotRandomized_.Experiment
 {
-    public class Experiment
+    public class ExperimentQs
     {
 
         private const String TYPE_NONDESCENDENT = "ND";
-        private const String TYPE_NONASCENDENT = "ND";
+        private const String TYPE_NONASCENDENT = "NA";
         private const String TYPE_RANDOM = "RA";
 
         private QuickSort<Int32> sorter;
@@ -22,14 +22,18 @@ namespace QuickSort_ExperimentDesign_Randomized_NotRandomized_.Experiment
         private Dictionary<String, List<double>> timesRandomQS;
 
 
-        public Experiment() {
+        public ExperimentQs() {
+
+            this.sorter = new QuickSort<Int32>();
+            this.sorterR = new Randomized_QS<Int32>();
+
             this.timesQS = new Dictionary<string, List<double>>();
             this.timesRandomQS = new Dictionary<string, List<double>>();
         }
 
         public void startExperiment() { 
 
-            for(int i = 0; i < 1000; i++)
+            for(int i = 0; i < 100; i++)
             {
                 initExperimentNonRandomizedQS(TYPE_NONDESCENDENT, orderedNonDescendent(10), orderedNonDescendent(100), orderedNonDescendent(1000), orderedNonDescendent(10000), orderedNonDescendent(100000));
                 initExperimentNonRandomizedQS(TYPE_NONASCENDENT, orderedNonAscendent(10), orderedNonAscendent(100), orderedNonAscendent(1000), orderedNonAscendent(10000), orderedNonAscendent(100000));
@@ -41,6 +45,7 @@ namespace QuickSort_ExperimentDesign_Randomized_NotRandomized_.Experiment
                 initExperimentRandomizedQS(TYPE_RANDOM, noOrder(10), noOrder(100), noOrder(1000), noOrder(10000), noOrder(100000));
 
             }
+            convertToCSV();
         }
 
         public void convertToCSV()
