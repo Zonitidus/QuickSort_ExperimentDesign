@@ -1,4 +1,5 @@
 ﻿using QuickSort_ExperimentDesign_Randomized_NotRandomized_.Experiment;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace QuickSort_ExperimentDesign_Randomized_NotRandomized_
@@ -15,9 +16,13 @@ namespace QuickSort_ExperimentDesign_Randomized_NotRandomized_
 
         private void startBtn_Click(object sender, System.EventArgs e)
         {
+            Thread t = new Thread(new ThreadStart(thread), 1000000);
+            t.Start();
+        }
+
+        public void thread() {
             exp.startExperiment();
             MessageBox.Show("El experimento terminó exitosamente!", "Terminado");
-            this.Close();
         }
     }
 }

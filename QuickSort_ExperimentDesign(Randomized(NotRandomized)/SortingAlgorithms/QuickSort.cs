@@ -18,11 +18,11 @@ namespace QuickSort_ExperimentDesign_Randomized_NotRandomized_.SortingAlgorithms
 
                 int q = this.Partition(array, p, r);
 
-                if (q > r)
-                {
+                //if (q > r)
+                //{
                     QuickSortAlgorithm(array, p, q - 1);
                     QuickSortAlgorithm(array, q + 1, r);
-                }
+                //}
             }
         
         }

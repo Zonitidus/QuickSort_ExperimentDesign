@@ -35,14 +35,14 @@ namespace QuickSort_ExperimentDesign_Randomized_NotRandomized_.Experiment
 
             for(int i = 0; i < 1000; i++)
             {
-                initExperimentNonRandomizedQS(TYPE_NONDESCENDENT, orderedNonDescendent(10), orderedNonDescendent(100), orderedNonDescendent(1000), orderedNonDescendent(10000), orderedNonDescendent(100000));
-                initExperimentNonRandomizedQS(TYPE_NONASCENDENT, orderedNonAscendent(10), orderedNonAscendent(100), orderedNonAscendent(1000), orderedNonAscendent(10000), orderedNonAscendent(100000));
-                initExperimentNonRandomizedQS(TYPE_RANDOM, noOrder(10), noOrder(100), noOrder(1000), noOrder(10000), noOrder(100000));
+                initExperimentNonRandomizedQS(TYPE_NONDESCENDENT, orderedNonDescendent(10), orderedNonDescendent(100), orderedNonDescendent(1000), orderedNonDescendent(10000)/*, orderedNonDescendent(100000)*/);
+                initExperimentNonRandomizedQS(TYPE_NONASCENDENT, orderedNonAscendent(10), orderedNonAscendent(100), orderedNonAscendent(1000), orderedNonAscendent(10000)/*, orderedNonAscendent(100000)*/);
+                initExperimentNonRandomizedQS(TYPE_RANDOM, noOrder(10), noOrder(100), noOrder(1000), noOrder(10000)/*, noOrder(100000)*/);
 
 
-                initExperimentRandomizedQS(TYPE_NONDESCENDENT, orderedNonDescendent(10), orderedNonDescendent(100), orderedNonDescendent(1000), orderedNonDescendent(10000), orderedNonDescendent(100000));
-                initExperimentRandomizedQS(TYPE_NONASCENDENT, orderedNonAscendent(10), orderedNonAscendent(100), orderedNonAscendent(1000), orderedNonAscendent(10000), orderedNonAscendent(100000));
-                initExperimentRandomizedQS(TYPE_RANDOM, noOrder(10), noOrder(100), noOrder(1000), noOrder(10000), noOrder(100000));
+                initExperimentRandomizedQS(TYPE_NONDESCENDENT, orderedNonDescendent(10), orderedNonDescendent(100), orderedNonDescendent(1000), orderedNonDescendent(10000)/*, orderedNonDescendent(100000)*/);
+                initExperimentRandomizedQS(TYPE_NONASCENDENT, orderedNonAscendent(10), orderedNonAscendent(100), orderedNonAscendent(1000), orderedNonAscendent(10000)/*, orderedNonAscendent(100000)*/);
+                initExperimentRandomizedQS(TYPE_RANDOM, noOrder(10), noOrder(100), noOrder(1000), noOrder(10000)/*, noOrder(100000)*/);
 
             }
             convertToCSV();
@@ -63,8 +63,14 @@ namespace QuickSort_ExperimentDesign_Randomized_NotRandomized_.Experiment
             System.IO.File.WriteAllText("../../TimesCSV/timesRandomQS.csv", csvTimesRandomQS);
         }
 
-        private void initExperimentNonRandomizedQS(String type, Int32[] array10, Int32[] array100, Int32[] array1000, Int32[] array10000, Int32[] array100000)
+        private void initExperimentNonRandomizedQS(String type, Int32[] array10, Int32[] array100, Int32[] array1000, Int32[] array10000/*, Int32[] array100000*/)
         {
+
+            Console.WriteLine(array10.Length + "\n" + array100.Length + "\n" + array1000.Length + "\n" + array10000.Length);
+
+            Console.WriteLine(array10[2] + "\n" + array100[2] + "\n" + array1000[2] + "\n" + array10000[2]);
+
+
             //10
             String Key10 = "10"+ type;
             TimeSpan watchI10 = new TimeSpan(DateTime.Now.Ticks);
@@ -141,7 +147,7 @@ namespace QuickSort_ExperimentDesign_Randomized_NotRandomized_.Experiment
 
 
             //100000
-            String Key100000 = "100000" + type;
+           /* String Key100000 = "100000" + type;
             TimeSpan watchI100000 = new TimeSpan(DateTime.Now.Ticks);
             sorter.QuickSortAlgorithm(array100000, 0, array100000.Length - 1);
             TimeSpan watchF100000 = new TimeSpan(DateTime.Now.Ticks);
@@ -155,12 +161,15 @@ namespace QuickSort_ExperimentDesign_Randomized_NotRandomized_.Experiment
             else
             {
                 timesQS[Key100000].Add(time100000ND);
-            }
+            }*/
 
         }
 
-        private void initExperimentRandomizedQS(String type, Int32[] array10, Int32[] array100, Int32[] array1000, Int32[] array10000, Int32[] array100000)
+        private void initExperimentRandomizedQS(String type, Int32[] array10, Int32[] array100, Int32[] array1000, Int32[] array10000/*, Int32[] array100000*/)
         {
+
+            Console.WriteLine(array10.Length + "\n" + array100.Length + "\n" + array1000.Length + "\n" + array10000.Length);
+
             //10
             String Key10 = "10" + type;
             TimeSpan watchI10 = new TimeSpan(DateTime.Now.Ticks);
@@ -238,7 +247,7 @@ namespace QuickSort_ExperimentDesign_Randomized_NotRandomized_.Experiment
 
 
             //100000
-            String Key100000 = "100000" + type;
+            /*String Key100000 = "100000" + type;
             TimeSpan watchI100000 = new TimeSpan(DateTime.Now.Ticks);
             sorterR.RandomizedQSAlgorithm(array100000, 0, array100000.Length - 1);
             TimeSpan watchF100000 = new TimeSpan(DateTime.Now.Ticks);
@@ -252,7 +261,7 @@ namespace QuickSort_ExperimentDesign_Randomized_NotRandomized_.Experiment
             else
             {
                 timesRandomQS[Key100000].Add(time100000ND);
-            }
+            }*/
 
         }
 

@@ -15,3 +15,5 @@ C:\Users\juano\Desktop\PruebaMerge\QuickSortsTests\obj\Debug\QuickSortsTests.csp
 C:\Users\juano\Desktop\PruebaMerge\QuickSortsTests\obj\Debug\QuickSortsTests.csproj.CopyComplete
 C:\Users\juano\Desktop\PruebaMerge\QuickSortsTests\obj\Debug\QuickSortsTests.dll
 C:\Users\juano\Desktop\PruebaMerge\QuickSortsTests\obj\Debug\QuickSortsTests.pdb
+C:\Users\zonif\OneDrive\Escritorio\Work\QuintoSemestre\Integrador\Talleres\Taller3\QuickSort_ExperimentDesign\QuickSortsTests\obj\Debug\QuickSortsTests.dll
+C:\Users\zonif\OneDrive\Escritorio\Work\QuintoSemestre\Integrador\Talleres\Taller3\QuickSort_ExperimentDesign\QuickSortsTests\obj\Debug\QuickSortsTests.pdb
