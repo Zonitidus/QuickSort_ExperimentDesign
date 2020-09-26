@@ -19,7 +19,7 @@ namespace QuickSortsTests
         public void Test_Int32_10_Worst()
         {
             Int32[] tsOrder = { 0, 2, 4, 6, 9, 86, 99, 101, 119, 300 };
-            Int32[] ts = { 4, 6, 86, 99, 101, 119, 300, 9, 0, 2 };
+            Int32[] ts = { 0, 2, 4, 6, 9, 86, 99, 101, 119, 300 };
             Scene_Int32_10_Worst().QuickSortAlgorithm(ts, 0, 9);
             string resul1 = string.Join(".", tsOrder);
             string resul2 = string.Join(".", ts);
